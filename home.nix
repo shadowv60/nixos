@@ -12,7 +12,12 @@
     # You could also move dwl and slstatus imports here if they aren't in configuration.nix
   ];
 
-  programs.git.enable = true;
+  programs.git = {
+  enable = true;
+  userName  = "shadowv60";
+  userEmail = "shadowvpsl48@gmail.com";
+};
+
 
   programs.bash = {
     enable = true;

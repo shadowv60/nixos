@@ -1,0 +1,19 @@
+# Nix/NixOS specific
+result
+result-*
+.direnv/
+
+# Compiled Binaries (from your dwl-src and slstatus-src)
+pkgs/dwl-src/dwl
+pkgs/slstatus-src/slstatus
+*.o
+*.a
+*.so
+
+# Build artifacts and backups
+*.orig
+*.rej
+*.swp
+
+# OS generated files
+.DS_Store
