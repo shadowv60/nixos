@@ -31,7 +31,7 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
-    "swaybg", "-i", "/home/wolk/walls/d1P6xtd.jpeg", "-m", "fill", NULL,
+    "swaybg", "-i", "/home/wolk/nixos-dotfiles/walls/d1P6xtd.jpeg", "-m", "fill", NULL,
     NULL /* terminate */
 };
 static const Rule rules[] = {
