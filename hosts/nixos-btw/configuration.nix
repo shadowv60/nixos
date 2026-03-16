@@ -40,10 +40,12 @@
     jack.enable = true;
   };
 
+  programs.fish.enable = true;
   # Users
   users.users.wolk = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" ]; 
+    shell = pkgs.fish;
     packages = with pkgs; [
       tree
     ];
@@ -61,7 +63,6 @@
     swaybg
     playerctl
     wl-clipboard
-    fish
   ];
 
   # Fonts

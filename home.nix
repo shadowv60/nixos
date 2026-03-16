@@ -4,31 +4,37 @@
   home.username = "wolk";
   home.homeDirectory = "/home/wolk";
   home.stateVersion = "25.11";
+
+  # This ensures your scripts in .local/bin are actually executable from anywhere
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   home.file.".local/bin".source = ./scripts;
   home.file.".local/bin".recursive = true;
 
   imports = [
     ./modules/home-manager/fastfetch.nix
-    # You could also move dwl and slstatus imports here if they aren't in configuration.nix
   ];
 
   programs.git = {
-  enable = true;
-  userName  = "shadowv60";
-  userEmail = "shadowvpsl48@gmail.com";
-};
-
-
-  programs.bash = {
     enable = true;
+    userName  = "shadowv60";
+    userEmail = "shadowvpsl48@gmail.com";
+  };
+
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+      fastfetch
+    '';
     shellAliases = {
+      # Use "v" for nvim since you had it in your bash config
       v = "nvim";
       nos = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw";
+      nix-clean = "nix-collect-garbage -d";
     };
-    initExtra = ''
-      fastfetch
-      export PS1='[\u@\h:\w]\$ '
-    '';
   };
 
   # XDG Dotfiles Management
@@ -40,7 +46,6 @@
     ".config/cava".source = ./config/cava;
     ".config/yazi".source = ./config/yazi;
     ".config/kitty".source = ./config/kitty;
-    # Removed fastfetch source here because fastfetch.nix handles it now
   };
 
   home.packages = with pkgs; [
@@ -63,7 +68,5 @@
     grim
     slurp
     wlsunset
-    # fastfetch is already included via programs.fastfetch.enable in fastfetch.nix
   ];
 }
-
