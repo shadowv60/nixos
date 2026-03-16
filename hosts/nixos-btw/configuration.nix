@@ -61,6 +61,7 @@
     swaybg
     playerctl
     wl-clipboard
+    fish
   ];
 
   # Fonts

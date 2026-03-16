@@ -22,7 +22,6 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      btw = "echo kjsdskj";
       v = "nvim";
       nos = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw";
     };
@@ -40,6 +39,7 @@
     ".config/rofi".source = ./config/rofi;
     ".config/cava".source = ./config/cava;
     ".config/yazi".source = ./config/yazi;
+    ".config/kitty".source = ./config/kitty;
     # Removed fastfetch source here because fastfetch.nix handles it now
   };
 
@@ -57,6 +57,7 @@
     cava
     yazi
     btop
+    kitty
     
     # Wayland Utilities
     grim
