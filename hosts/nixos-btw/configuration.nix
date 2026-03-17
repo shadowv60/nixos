@@ -41,6 +41,7 @@
   };
 
   programs.fish.enable = true;
+  programs.dconf.enable = true;
   # Users
   users.users.wolk = {
     isNormalUser = true;

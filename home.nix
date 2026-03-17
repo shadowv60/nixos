@@ -19,8 +19,8 @@
 
   programs.git = {
     enable = true;
-    userName  = "shadowv60";
-    userEmail = "shadowvpsl48@gmail.com";
+    settings.user.name  = "shadowv60";
+    settings.user.email = "shadowvpsl48@gmail.com";
   };
 
   programs.fish = {
@@ -34,6 +34,21 @@
       v = "nvim";
       nos = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw";
       nix-clean = "nix-collect-garbage -d";
+    };
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true; # Enable this if using a floating WM or X11
+    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
+    size = 24;
+  };
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
     };
   };
 
