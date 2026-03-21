@@ -43,6 +43,10 @@
     jack.enable = true;
   };
 
+  environment.sessionVariables = {
+  XKB_DEFAULT_OPTIONS = "caps:escape";
+ };
+
   programs.fish.enable = true;
   programs.dconf.enable = true;
   # Users
