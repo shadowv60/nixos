@@ -1,4 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
+
+let
+  pkgsList = import ../../modules/system/packages.nix { inherit pkgs inputs; };
+in
 
 {
   imports = [
@@ -55,44 +59,20 @@
     extraGroups = [ "wheel" "video" "audio" ]; 
     shell = pkgs.fish;
     packages = with pkgs; [
-      tree
     ];
   };
+
+  environment.systemPackages = pkgsList.systemPackages;
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = pkgsList.nixLdLibraries;
 
   # Programs & System Packages
   programs.firefox.enable = true;
   programs.xwayland.enable = true;
   
-  environment.systemPackages = with pkgs; [
-    wget
-    git
-    foot
-    rofi
-    swaybg
-    playerctl
-    wl-clipboard
-    libmtp
-    mtpfs
-    kdePackages.kio-extras
-    android-tools
-  ];
-
   # Fonts
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-  ];
-
-  # Nix-LD for Mason/Treesitter fix
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    stdenv.cc.cc
-    zlib
-    fuse3
-    icu
-    nss
-    openssl
-    curl
-    expat
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -12,7 +12,8 @@ let
     ];
 
     buildInputs = with pkgs; [
-      xorg.libX11
+      # Renamed from xorg.libX11 to libx11
+      libx11
     ];
 
     installFlags = [ "DESTDIR=$(out)" "PREFIX=" ];

@@ -1,5 +1,9 @@
 { config, pkgs, inputs, ... }:
 
+let
+  pkgsList = import ./modules/system/packages.nix { inherit pkgs inputs; };
+in
+
 {
   home.username = "wolk";
   home.homeDirectory = "/home/wolk";
@@ -94,29 +98,7 @@
     ".config/kitty".source = ./config/kitty;
     ".config/rmpc".source = ./config/rmpc;
   };
-
-  home.packages = with pkgs; [
-    # Neovim & Development
-    neovim
-    tree-sitter
-    ripgrep
-    gcc
-    nodejs
-    unzip
-    
-    # User Applications
-    inputs.zen-browser.packages."${pkgs.system}".default
-    cava
-    yazi
-    btop
-    kitty
-    mpc
-    rmpc
-    kdePackages.dolphin
-
-    # Wayland Utilities
-    grim
-    slurp
-    wlsunset
-  ];
+  
+  home.packages = pkgsList.userPackages;
 }
+

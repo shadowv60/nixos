@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 let
-  # Move your package definition into a 'let' block
   dwl-custom = pkgs.stdenv.mkDerivation rec {
     pname = "dwl-custom";
     version = "master";
@@ -22,12 +21,14 @@ let
       pixman
       fcft
       libdrm
-      xorg.libxcb
-      xorg.xcbutilwm
-      xorg.xcbutilerrors
+      # Renamed these to fix deprecation warnings:
+      libxcb
+      libxcb-wm
+      libxcb-errors
       libcap
     ];
 
+    # Updated system reference to fix evaluation warning
     NIX_CFLAGS_COMPILE = [ "-I${pkgs.libdrm}/include/libdrm" ];
 
     installFlags = [ "DESTDIR=$(out)" "PREFIX=" ];
@@ -46,7 +47,6 @@ let
   };
 in
 {
-  # Now tell NixOS to actually install this package and recognize the session
   environment.systemPackages = [ dwl-custom ];
   services.displayManager.sessionPackages = [ dwl-custom ];
 }
