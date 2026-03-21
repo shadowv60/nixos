@@ -20,6 +20,9 @@
 
   time.timeZone = "Asia/Kolkata";
 
+  # 1. Enable GVFS (Essential for Dolphin to "see" network/mtp shares)
+  services.gvfs.enable = true;
+
   # Window Managers & Display Manager
   services.xserver = {
     enable = true;
@@ -64,6 +67,10 @@
     swaybg
     playerctl
     wl-clipboard
+    libmtp
+    mtpfs
+    kdePackages.kio-extras
+    android-tools
   ];
 
   # Fonts

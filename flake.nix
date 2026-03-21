@@ -2,22 +2,27 @@
   description = "wolk's nixos config";
 
   inputs = {
-    # Stick to 25.11 for system stability
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    
+    # We point the main nixpkgs to unstable
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";     
+
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      # Point home-manager to the master/unstable branch to match nixpkgs
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Zen Browser flake
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  let
+    system = "x86_64-linux";
+  in {
     nixosConfigurations.nixos-btw = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; }; 
       modules = [
+        { nixpkgs.hostPlatform = system; } 
+        
         ./hosts/nixos-btw/configuration.nix
         home-manager.nixosModules.home-manager
         {

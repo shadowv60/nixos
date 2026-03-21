@@ -52,6 +52,37 @@
     };
   };
 
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/home/wolk/Music";
+    dataDir = "/home/wolk/.local/share/mpd";
+    
+    # Let Home Manager handle the network binding
+    network.listenAddress = "127.0.0.1";
+    network.port = 6600;
+
+    extraConfig = ''
+      # Do NOT put bind_to_address or port in here
+      auto_update "yes"
+      restore_paused "yes"
+
+      audio_output {
+        type "pipewire"
+        name "PipeWire Output"
+      }
+
+      audio_output {
+        type "fifo"
+        name "cava_fifo"
+        path "/tmp/mpd.fifo"
+        format "44100:16:2"
+      }
+    '';
+  };
+
+
+  services.mpdris2.enable = true;
+
   # XDG Dotfiles Management
   home.file = {
     ".config/qtile".source = ./config/qtile;
@@ -61,6 +92,7 @@
     ".config/cava".source = ./config/cava;
     ".config/yazi".source = ./config/yazi;
     ".config/kitty".source = ./config/kitty;
+    ".config/rmpc".source = ./config/rmpc;
   };
 
   home.packages = with pkgs; [
@@ -78,7 +110,10 @@
     yazi
     btop
     kitty
-    
+    mpc
+    rmpc
+    kdePackages.dolphin
+
     # Wayland Utilities
     grim
     slurp
