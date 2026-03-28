@@ -26,6 +26,7 @@
     gcc
     nodejs
     unzip
+    localsend
     
     # User Applications
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
@@ -36,6 +37,7 @@
     mpc
     rmpc
     kdePackages.dolphin
+    zed-editor
 
     # Wayland Utilities
     grim

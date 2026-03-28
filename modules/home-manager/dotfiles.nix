@@ -3,7 +3,7 @@
 {
   home.file = {
     ".config/qtile".source = ../../config/qtile;
-    ".config/nvim".source = ../../config/nvim;
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/nvim";
     ".config/foot".source = ../../config/foot;
     ".config/rofi".source = ../../config/rofi;
     ".config/cava".source = ../../config/cava;
