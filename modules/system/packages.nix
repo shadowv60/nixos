@@ -3,7 +3,6 @@
   systemPackages = with pkgs; [
     wget
     git
-    foot
     rofi
     swaybg
     playerctl
@@ -21,7 +20,6 @@
     cava
     yazi
     btop
-    kitty
     mpc
     rmpc
     kdePackages.dolphin
@@ -29,6 +27,8 @@
     slurp
     wlsunset
     hyprsunset
+    kitty
+    foot
   ];
   nixLdLibraries = with pkgs; [
     stdenv.cc.cc
