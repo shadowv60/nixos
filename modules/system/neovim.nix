@@ -22,7 +22,7 @@
     # Nix tools
     statix
     deadnix
-    nixfmt-rfc-style
+    nixfmt
     # Lua
     lua-language-server
   ];

@@ -1,0 +1,44 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 20,
+  "spacing": 0,
+
+  "modules-left": ["hyprland/workspaces", "custom/layout", "hyprland/window"],
+  "custom/layout": {
+  "exec": "~/nixos-dotfiles/scripts/layout.sh",
+  "interval": "once",
+  "format": "{}"
+},
+"hyprland/window": {
+  "format": "{}",
+  "max-length": 60,
+  "separate-outputs": true
+},
+  "modules-center": [],
+  "modules-right": [
+    "custom/music",
+    "custom/cpu",
+    "custom/ram",
+    "custom/wifi",
+    "custom/volume",
+    "custom/datetime"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "sort-by-number": true
+  },
+
+  "hyprland/submap": {
+    "format": "[{}]"
+  },
+
+  "custom/music":    { "exec": "~/nixos-dotfiles/scripts/music.sh",    "interval": 2,  "format": "{}" },
+  "custom/cpu":      { "exec": "~/nixos-dotfiles/scripts/cpu.sh",      "interval": 3,  "format": "| {}" },
+  "custom/ram":      { "exec": "~/nixos-dotfiles/scripts/ram.sh",      "interval": 5,  "format": "| {}" },
+  "custom/wifi":     { "exec": "~/nixos-dotfiles/scripts/wifi.sh",     "interval": 10, "format": "| {}" },
+  "custom/volume":   { "exec": "~/nixos-dotfiles/scripts/volume.sh",   "interval": 2,  "format": "| {}" },
+  "custom/datetime": { "exec": "~/nixos-dotfiles/scripts/datetime.sh", "interval": 30, "format": "| {}" }
+}

@@ -13,6 +13,7 @@
     kdePackages.kio-extras
     android-tools
     tree
+    waybar
   ];
   userPackages = with pkgs; [
     localsend
@@ -27,6 +28,7 @@
     grim
     slurp
     wlsunset
+    hyprsunset
   ];
   nixLdLibraries = with pkgs; [
     stdenv.cc.cc
