@@ -29,6 +29,8 @@
     hyprsunset
     kitty
     foot
+    docker-compose
+    lazydocker
   ];
   nixLdLibraries = with pkgs; [
     stdenv.cc.cc

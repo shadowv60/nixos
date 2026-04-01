@@ -12,6 +12,8 @@
   services.displayManager.sessionPackages = [ pkgs.hyprland ];
   services.displayManager.ly.enable = true;
 
+  virtualisation.docker.enable = true;
+
   services.pipewire = {
     enable = true;
     pulse.enable = true;
