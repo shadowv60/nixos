@@ -26,6 +26,7 @@
 
   gtk = {
     enable = true;
+    gtk4.theme = config.gtk.theme;
     cursorTheme = {
       package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
