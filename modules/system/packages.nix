@@ -12,7 +12,10 @@
     kdePackages.kio-extras
     android-tools
     tree
+    appimage-run
+    ffmpeg
     waybar
+    (pkgs.callPackage ../../pkgs/spotiflac.nix { })
   ];
   userPackages = with pkgs; [
     localsend
@@ -31,6 +34,8 @@
     foot
     docker-compose
     lazydocker
+    android-file-transfer
+    libreoffice-fresh
   ];
   nixLdLibraries = with pkgs; [
     stdenv.cc.cc

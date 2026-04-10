@@ -31,6 +31,10 @@
     enable = true;
     xwayland.enable = true;
   };
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   # Essential System Programs
   programs.fish.enable = true;

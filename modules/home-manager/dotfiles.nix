@@ -24,6 +24,16 @@
     size = 24;
   };
 
+  xdg.desktopEntries.spotiflac = {
+    name = "SpotiFLAC";
+    exec = "spotiflac";
+    icon = "spotify";
+    categories = [
+      "Audio"
+      "Music"
+    ];
+  };
+
   gtk = {
     enable = true;
     gtk4.theme = config.gtk.theme;
