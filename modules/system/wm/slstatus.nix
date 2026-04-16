@@ -5,7 +5,7 @@ let
     pname = "slstatus-custom";
     version = "master";
 
-    src = ../../pkgs/slstatus-src;
+    src = ../../../pkgs/slstatus-src;
 
     nativeBuildInputs = with pkgs; [
       pkg-config

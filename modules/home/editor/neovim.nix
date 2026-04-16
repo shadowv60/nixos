@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  userPackages = with pkgs; [
+  home.packages = with pkgs; [
     neovim
     tree-sitter
     ripgrep

@@ -6,7 +6,6 @@
 }:
 let
   pkgsList = import ./modules/system/packages.nix { inherit pkgs inputs; };
-  nvimPkgs = import ./modules/system/neovim.nix { inherit pkgs; };
 in
 {
   home.username = "wolk";
@@ -14,7 +13,7 @@ in
   home.stateVersion = "25.11";
   home.sessionPath = [ "$HOME/.local/bin" ];
   imports = [
-    ./modules/home-manager
+    ./modules/home
   ];
-  home.packages = pkgsList.userPackages ++ nvimPkgs.userPackages;
+  home.packages = pkgsList.userPackages;
 }

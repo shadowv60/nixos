@@ -36,6 +36,8 @@
     lazydocker
     android-file-transfer
     libreoffice-fresh
+    qbittorrent
+    telegram-desktop
   ];
   nixLdLibraries = with pkgs; [
     stdenv.cc.cc

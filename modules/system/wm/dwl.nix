@@ -5,7 +5,7 @@ let
     pname = "dwl-custom";
     version = "master";
 
-    src = ../../pkgs/dwl-src;
+    src = ../../../pkgs/dwl-src;
 
     nativeBuildInputs = with pkgs; [
       pkg-config
