@@ -15,7 +15,8 @@
     appimage-run
     ffmpeg
     waybar
-    (pkgs.callPackage ../../pkgs/spotiflac.nix { })
+    inputs.self.packages.${pkgs.system}.spotiflac
+
   ];
   userPackages = with pkgs; [
     localsend
