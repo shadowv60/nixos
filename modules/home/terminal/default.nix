@@ -2,5 +2,9 @@
 { ... }:
 {
   imports = [
+    ./foot.nix
+    ./kitty.nix
+    ./yazi.nix
+    ./cava.nix
   ];
 }

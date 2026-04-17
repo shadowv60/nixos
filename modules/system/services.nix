@@ -4,11 +4,6 @@
   services.printing.enable = true;
   services.openssh.enable = true;
 
-  services.xserver = {
-    enable = true;
-    windowManager.qtile.enable = true;
-  };
-
   services.displayManager.sessionPackages = [ pkgs.hyprland ];
   services.displayManager.ly.enable = true;
 
@@ -27,10 +22,6 @@
     allowedUDPPorts = [ 53317 ];
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   programs.appimage = {
     enable = true;
     binfmt = true;

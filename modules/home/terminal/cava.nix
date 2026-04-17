@@ -1,0 +1,50 @@
+{ ... }:
+{
+  programs.cava = {
+    enable = true;
+    settings = {
+      general = {
+        framerate = 60;
+        autosens = 1;
+        bar_width = 1;
+        sensitivity = 100;
+        lower_cutoff_freq = 50;
+        higher_cutoff_freq = 10000;
+      };
+
+      color = {
+        gradient = 1;
+        gradient_count = 8;
+        # Note: We use double quotes for hex codes in Nix
+        gradient_color_1 = "'#293134'";
+        gradient_color_2 = "'#49504f'";
+        gradient_color_3 = "'#49504f'";
+        gradient_color_4 = "'#636862'";
+        gradient_color_5 = "'#85867a'";
+        gradient_color_6 = "'#85867a'";
+        gradient_color_7 = "'#bbb49d'";
+        gradient_color_8 = "'#ece6d9'";
+      };
+
+      input = {
+        method = "pipewire";
+        source = "auto";
+        sample_rate = 44100;
+        channels = 2;
+        sample_bits = 16;
+      };
+
+      output = {
+        method = "ncurses";
+        orientation = "bottom";
+        channels = "stereo";
+      };
+
+      smoothing = {
+        monstercat = 1;
+        waves = 0;
+        noise_reduction = 77;
+      };
+    };
+  };
+}

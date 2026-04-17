@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = [ pkgs.rmpc ];
+
+  # This links the local folder ./rmpc/ to ~/.config/rmpc/
+  home.file.".config/rmpc".source = ./rmpc;
+
   services.mpd = {
     enable = true;
     musicDirectory = "/home/wolk/Music";
@@ -22,5 +27,6 @@
       }
     '';
   };
+
   services.mpdris2.enable = true;
 }

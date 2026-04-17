@@ -3,7 +3,6 @@
   systemPackages = with pkgs; [
     wget
     git
-    rofi
     swaybg
     playerctl
     wl-clipboard
@@ -14,31 +13,25 @@
     tree
     appimage-run
     ffmpeg
-    waybar
     inputs.self.packages.${pkgs.system}.spotiflac
-
   ];
   userPackages = with pkgs; [
     localsend
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
-    cava
-    yazi
     btop
     mpc
-    rmpc
     kdePackages.dolphin
     grim
     slurp
     wlsunset
     hyprsunset
-    kitty
-    foot
     docker-compose
     lazydocker
     android-file-transfer
     libreoffice-fresh
     qbittorrent
     telegram-desktop
+    bottles
   ];
   nixLdLibraries = with pkgs; [
     stdenv.cc.cc
