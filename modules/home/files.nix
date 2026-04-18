@@ -2,9 +2,11 @@
 
 {
   home.file = {
-    ".local/bin".source = ../../scripts;
+    ".local/bin" = {
+      source = ../../scripts;
+      recursive = true;
+    };
   };
-  home.file.".local/bin".recursive = true;
 
   home.pointerCursor = {
     gtk.enable = true;

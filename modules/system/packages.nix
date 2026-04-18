@@ -31,7 +31,8 @@
     libreoffice-fresh
     qbittorrent
     telegram-desktop
-    bottles
+    vlc
+    opus-tools
   ];
   nixLdLibraries = with pkgs; [
     stdenv.cc.cc
