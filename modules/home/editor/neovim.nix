@@ -6,13 +6,14 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    # Silence the 26.05 warnings
     withRuby = false;
-    withPython3 = true; # Keep true if you use Python plugins in Nvim
+    withPython3 = true;
   };
 
-  home.file.".config/nvim".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/modules/home/editor/nvim";
+  xdg.configFile."nvim" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/modules/home/editor/nvim";
+    recursive = false;
+  };
 
   home.packages = with pkgs; [
     tree-sitter

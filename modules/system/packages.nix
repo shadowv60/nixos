@@ -14,10 +14,12 @@
     appimage-run
     ffmpeg
     inputs.self.packages.${pkgs.system}.spotiflac
+    unrar
   ];
   userPackages = with pkgs; [
     localsend
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+    inputs.self.packages.${pkgs.system}.ab-download-manager
     btop
     mpc
     kdePackages.dolphin
@@ -33,6 +35,8 @@
     telegram-desktop
     vlc
     opus-tools
+    stremio-linux-shell
+    heroic
   ];
   nixLdLibraries = with pkgs; [
     stdenv.cc.cc

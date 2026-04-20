@@ -8,10 +8,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
-    # 1. ADD THIS: Point to the 'latest' release download
+    ab-download-manager-src = {
+      url = "https://github.com/amir1376/ab-download-manager/releases/download/v1.8.7/ABDownloadManager_1.8.7_linux_x64.tar.gz";
+      flake = false;
+    };
     spotiflac-src = {
-      url = "https://github.com/spotbye/SpotiFLAC/releases/latest/download/spotiflac-linux-bundle.tar.gz";
+      url = "https://github.com/spotbye/SpotiFLAC/releases/latest/download/SpotiFLAC.AppImage";
       flake = false;
     };
   };
@@ -22,6 +24,7 @@
       nixpkgs,
       home-manager,
       spotiflac-src,
+      ab-download-manager-src,
       ...
     }@inputs:
     let
@@ -31,6 +34,9 @@
     {
       packages.${system} = {
         # 2. UPDATE THIS: Pass 'spotiflac-src' into the package
+        ab-download-manager = pkgs.callPackage ./pkgs/ab-download-manager.nix {
+          srcOverride = ab-download-manager-src;
+        };
         spotiflac = pkgs.callPackage ./pkgs/spotiflac.nix {
           srcOverride = spotiflac-src;
         };
