@@ -8,6 +8,7 @@
       "audio"
       "docker"
       "kvm"
+      "libvirtd"
     ];
     shell = pkgs.fish;
   };

@@ -15,6 +15,7 @@
     ffmpeg
     inputs.self.packages.${pkgs.system}.spotiflac
     unrar
+    thunar
   ];
   userPackages = with pkgs; [
     localsend

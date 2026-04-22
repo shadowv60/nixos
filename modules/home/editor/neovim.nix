@@ -1,21 +1,20 @@
 { config, pkgs, ... }:
-
 {
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    withRuby = false;
-    withPython3 = true;
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
-  xdg.configFile."nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/modules/home/editor/nvim";
-    recursive = false;
+  home.shellAliases = {
+    vi = "nvim";
+    vim = "nvim";
   };
+
+  xdg.configFile."nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/modules/home/editor/nvim";
 
   home.packages = with pkgs; [
+    neovim
     tree-sitter
     ripgrep
     fd
@@ -33,7 +32,7 @@
     rustfmt
     statix
     deadnix
-    nixfmt # Changed from nixfmt-rfc-style to nixfmt as per warning
+    nixfmt
     lua-language-server
   ];
 }
