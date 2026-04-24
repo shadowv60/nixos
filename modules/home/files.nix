@@ -25,16 +25,6 @@
     ];
   };
 
-  xdg.desktopEntries.prismlauncher-cracked = {
-    name = "Prismlauncher-Cracked";
-    exec = "prismlauncher-cracked";
-    icon = "prismlauncher-cracked";
-    categories = [
-      "Network"
-      "FileTransfer"
-    ];
-  };
-
   xdg.desktopEntries.ab-download-manager = {
     name = "AB Download Manager";
     exec = "ab-download-manager";

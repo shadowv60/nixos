@@ -55,6 +55,22 @@
         "type": "github"
       }
     },
+    "libnbtplusplus": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772016279,
+        "narHash": "sha256-7itkptyjoRcXfGLwg1/jxajetZ3a4mDc66+w4X6yW8s=",
+        "owner": "PrismLauncher",
+        "repo": "libnbtplusplus",
+        "rev": "687e43031df0dc641984b4256bcca50d5b3f7de3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PrismLauncher",
+        "repo": "libnbtplusplus",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1776169885,
@@ -73,6 +89,19 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1774709303,
+        "narHash": "sha256-D4ely1FsBcvtj/qSrNhSWpq+CUZKNiKwJIxpxnfy9o4=",
+        "rev": "8110df5ad7abf5d4c0f6fb0f8f978390e77f9685",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre971119.8110df5ad7ab/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1775710090,
         "narHash": "sha256-ar3rofg+awPB8QXDaFJhJ2jJhu+KqN/PRCXeyuXR76E=",
         "owner": "nixos",
@@ -87,17 +116,23 @@
         "type": "github"
       }
     },
-    "prismlauncher-cracked-src": {
-      "flake": false,
+    "prismlauncher-cracked": {
+      "inputs": {
+        "libnbtplusplus": "libnbtplusplus",
+        "nixpkgs": "nixpkgs_2"
+      },
       "locked": {
-        "lastModified": 1776796563,
-        "narHash": "sha256-z92LYJ/3mXa1MtbzVS1MkNxxVMhqHWjyack2btt4vDY=",
-        "type": "tarball",
-        "url": "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/11.0.2-1/PrismLauncher-Linux-Qt6-Portable-11.0.2-1.tar.gz"
+        "lastModified": 1776795718,
+        "narHash": "sha256-YrqHeE9ZEnmxJiXE+IBAxbmNRFPE7mn9KbxZ3Mpu388=",
+        "owner": "Diegiwg",
+        "repo": "PrismLauncher-Cracked",
+        "rev": "0c20d448a3c89cbff85ef5dc7420bf60dc1e65ff",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/11.0.2-1/PrismLauncher-Linux-Qt6-Portable-11.0.2-1.tar.gz"
+        "owner": "Diegiwg",
+        "repo": "PrismLauncher-Cracked",
+        "type": "github"
       }
     },
     "root": {
@@ -105,7 +140,7 @@
         "ab-download-manager-src": "ab-download-manager-src",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "prismlauncher-cracked-src": "prismlauncher-cracked-src",
+        "prismlauncher-cracked": "prismlauncher-cracked",
         "spotiflac-src": "spotiflac-src",
         "zen-browser": "zen-browser"
       }
@@ -125,7 +160,7 @@
     "zen-browser": {
       "inputs": {
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1776638237,

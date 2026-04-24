@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    prismlauncher-cracked.url = "github:Diegiwg/PrismLauncher-Cracked";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     ab-download-manager-src = {
       url = "https://github.com/amir1376/ab-download-manager/releases/download/v1.8.7/ABDownloadManager_1.8.7_linux_x64.tar.gz";
@@ -14,10 +15,6 @@
     };
     spotiflac-src = {
       url = "https://github.com/spotbye/SpotiFLAC/releases/latest/download/SpotiFLAC.AppImage";
-      flake = false;
-    };
-    prismlauncher-cracked-src = {
-      url = "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/11.0.2-1/PrismLauncher-Linux-Qt6-Portable-11.0.2-1.tar.gz";
       flake = false;
     };
   };
@@ -29,7 +26,7 @@
       home-manager,
       spotiflac-src,
       ab-download-manager-src,
-      prismlauncher-cracked-src,
+      prismlauncher-cracked,
       ...
     }@inputs:
     let
@@ -41,10 +38,6 @@
         # 2. UPDATE THIS: Pass 'spotiflac-src' into the package
         ab-download-manager = pkgs.callPackage ./pkgs/ab-download-manager.nix {
           srcOverride = ab-download-manager-src;
-        };
-        # In packages.${system}:
-        prismlauncher-cracked = pkgs.callPackage ./pkgs/prismlauncher-cracked.nix {
-          srcOverride = prismlauncher-cracked-src;
         };
         spotiflac = pkgs.callPackage ./pkgs/spotiflac.nix {
           srcOverride = spotiflac-src;
