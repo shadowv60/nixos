@@ -87,11 +87,25 @@
         "type": "github"
       }
     },
+    "prismlauncher-cracked-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1776796563,
+        "narHash": "sha256-z92LYJ/3mXa1MtbzVS1MkNxxVMhqHWjyack2btt4vDY=",
+        "type": "tarball",
+        "url": "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/11.0.2-1/PrismLauncher-Linux-Qt6-Portable-11.0.2-1.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/11.0.2-1/PrismLauncher-Linux-Qt6-Portable-11.0.2-1.tar.gz"
+      }
+    },
     "root": {
       "inputs": {
         "ab-download-manager-src": "ab-download-manager-src",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "prismlauncher-cracked-src": "prismlauncher-cracked-src",
         "spotiflac-src": "spotiflac-src",
         "zen-browser": "zen-browser"
       }

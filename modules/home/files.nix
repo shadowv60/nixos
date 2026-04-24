@@ -25,6 +25,26 @@
     ];
   };
 
+  xdg.desktopEntries.prismlauncher-cracked = {
+    name = "Prismlauncher-Cracked";
+    exec = "prismlauncher-cracked";
+    icon = "prismlauncher-cracked";
+    categories = [
+      "Network"
+      "FileTransfer"
+    ];
+  };
+
+  xdg.desktopEntries.ab-download-manager = {
+    name = "AB Download Manager";
+    exec = "ab-download-manager";
+    icon = "ab-download-manager";
+    categories = [
+      "Network"
+      "FileTransfer"
+    ];
+  };
+
   gtk = {
     enable = true;
     gtk4.theme = config.gtk.theme;

@@ -21,6 +21,7 @@
     localsend
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     inputs.self.packages.${pkgs.system}.ab-download-manager
+    inputs.self.packages.${pkgs.system}.prismlauncher-cracked
     btop
     mpc
     kdePackages.dolphin

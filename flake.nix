@@ -16,6 +16,10 @@
       url = "https://github.com/spotbye/SpotiFLAC/releases/latest/download/SpotiFLAC.AppImage";
       flake = false;
     };
+    prismlauncher-cracked-src = {
+      url = "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/11.0.2-1/PrismLauncher-Linux-Qt6-Portable-11.0.2-1.tar.gz";
+      flake = false;
+    };
   };
 
   outputs =
@@ -25,6 +29,7 @@
       home-manager,
       spotiflac-src,
       ab-download-manager-src,
+      prismlauncher-cracked-src,
       ...
     }@inputs:
     let
@@ -36,6 +41,10 @@
         # 2. UPDATE THIS: Pass 'spotiflac-src' into the package
         ab-download-manager = pkgs.callPackage ./pkgs/ab-download-manager.nix {
           srcOverride = ab-download-manager-src;
+        };
+        # In packages.${system}:
+        prismlauncher-cracked = pkgs.callPackage ./pkgs/prismlauncher-cracked.nix {
+          srcOverride = prismlauncher-cracked-src;
         };
         spotiflac = pkgs.callPackage ./pkgs/spotiflac.nix {
           srcOverride = spotiflac-src;
