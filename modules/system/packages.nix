@@ -24,7 +24,6 @@
     inputs.prismlauncher-cracked.packages.${pkgs.system}.default
     btop
     mpc
-    kdePackages.dolphin
     grim
     slurp
     wlsunset
@@ -37,8 +36,6 @@
     telegram-desktop
     vlc
     opus-tools
-    stremio-linux-shell
-    heroic
   ];
   nixLdLibraries = with pkgs; [
     stdenv.cc.cc

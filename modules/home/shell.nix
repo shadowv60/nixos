@@ -3,7 +3,7 @@
 {
   programs.git = {
     enable = true;
-    settings.user.name  = "shadowv60";
+    settings.user.name = "shadowv60";
     settings.user.email = "shadowvpsl48@gmail.com";
   };
 
@@ -16,7 +16,7 @@
     shellAliases = {
       v = "nvim";
       nos = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw";
-      nix-clean = "nix-collect-garbage -d";
+      nix-clean = "sudo nix-env --delete-generations +1 --profile /nix/var/nix/profiles/system && nix-env --delete-generations +1 && sudo nix-collect-garbage -d && nix-collect-garbage -d";
     };
   };
 }

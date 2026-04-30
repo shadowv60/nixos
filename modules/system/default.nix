@@ -8,7 +8,8 @@
     ./boot.nix # We will create this
     ./vm.nix
     ./hardware.nix
-    ./waydroid.nix
+    # ./waydroid.nix
+    ./nix.nix
     ./dns.nix
   ];
 }

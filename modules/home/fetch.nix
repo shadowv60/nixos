@@ -59,12 +59,12 @@
           };
         }
         "break"
-        {
-          type = "disk";
-          key = "DISK";
-          keyColor = "blue";
-          format= "wolk";
-        }
+        # {
+        #   type = "disk";
+        #   key = "DISK";
+        #   keyColor = "blue";
+        #   format= "wolk";
+        # }
         {
           type = "disk";
           key = "├ disk";
@@ -135,7 +135,7 @@
         {
           type = "editor";
           key = "└ edit";
-          format= "nvim";
+          format = "nvim";
         }
       ];
     };
