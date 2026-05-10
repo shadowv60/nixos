@@ -9,6 +9,7 @@
     ./vm.nix
     ./hardware.nix
     # ./waydroid.nix
+    ./zram.nix
     ./nix.nix
     ./dns.nix
   ];

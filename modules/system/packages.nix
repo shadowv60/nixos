@@ -12,8 +12,7 @@
     android-tools
     tree
     appimage-run
-    ffmpeg
-    inputs.self.packages.${pkgs.system}.spotiflac
+    # inputs.self.packages.${pkgs.system}.spotiflac
     unrar
     thunar
   ];
@@ -31,10 +30,11 @@
     docker-compose
     lazydocker
     android-file-transfer
-    libreoffice-fresh
     qbittorrent
     telegram-desktop
     vlc
+    mcomix
+    jdk
     opus-tools
   ];
   nixLdLibraries = with pkgs; [

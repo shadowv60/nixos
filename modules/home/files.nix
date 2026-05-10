@@ -15,16 +15,6 @@
     size = 24;
   };
 
-  xdg.desktopEntries.spotiflac = {
-    name = "SpotiFLAC";
-    exec = "spotiflac";
-    icon = "spotify";
-    categories = [
-      "Audio"
-      "Music"
-    ];
-  };
-
   xdg.desktopEntries.ab-download-manager = {
     name = "AB Download Manager";
     exec = "ab-download-manager";

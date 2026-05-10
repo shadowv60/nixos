@@ -25,4 +25,12 @@
   programs.dconf.enable = true;
   programs.firefox.enable = true;
   programs.xwayland.enable = true;
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      openldap = prev.openldap.overrideAttrs (_: {
+        doCheck = false;
+      });
+    })
+  ];
 }
