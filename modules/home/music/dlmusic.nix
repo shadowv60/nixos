@@ -33,7 +33,8 @@
       set lyrics (curl -s "https://lrclib.net/api/search?q=$query" | jq -r '.[0].syncedLyrics // .[0].plainLyrics // empty')
 
       if test -n "$lyrics"
-          printf "[ti:%s]\n[ar:%s]\n[al:%s]\n%s\n" $title $artist $album $lyrics > $lrc_path
+          printf "[ti:%s]\n[ar:%s]\n[al:%s]\n" $title $artist $album > $lrc_path
+          string join \n $lyrics >> $lrc_path
           python3 -c "
 from mutagen.oggopus import OggOpus
 audio = OggOpus('$opus_path')
